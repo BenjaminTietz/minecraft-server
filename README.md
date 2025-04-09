@@ -42,7 +42,7 @@ sudo apt update && sudo apt install -y docker.io docker-compose git
 minecraft-server/
 ├── docker-compose.yml
 ├── .gitignore
-└── data/                # Automatically created when the server runs
+└── data/                # Automatically created when the server runs it includes all the server data including settings etcpp
 ```
 
 ---
@@ -55,7 +55,7 @@ minecraft-server/
    ```
 2. **Clone the repository:**
    ```sh
-   https://github.com/BenjaminTietz/minecraft-server
+   git clone git@github.com:BenjaminTietz/minecraft-server.git
    cd mincraft-server
    ```
 3. **Generate and configure the .env file:** <br>
@@ -139,15 +139,15 @@ players: 0/20 No players online
 ```yaml
 services:
   minecraft-server:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server #This is an offical commuity image
     container_name: mc-server
     ports:
       - "25565:25565"
     environment:
-      EULA: "TRUE"
+      EULA: "TRUE" # (optional) use an .env
     volumes:
       - ./data:/data
-    restart: unless-stopped
+    restart: on-failure
 ```
 
 ---
