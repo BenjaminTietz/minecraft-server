@@ -62,12 +62,12 @@ minecraft-server/
    The environment file will be created automatically from env.template.
    Adjust the values to match your setup (optional):
    ```sh
-   cp mincraft-server/env_template.env .env
+   cp env_template.txt .env
    nano .env (optional)
    ```
 4. Start the Minecraft server:
    ```bash
-   docker compose up -d
+   docker-compose up -d
    ```
 5. Install `mcstatus` and check server status:
    ```bash
@@ -155,7 +155,7 @@ services:
 ## Stop and Cleanup
 
 ```bash
-docker compose down
+docker-compose down
 ```
 
 To remove all persisted data:
