@@ -12,4 +12,4 @@ services:
       ONLINE_MODE: "${ONLINE_MODE}"
     volumes:
       - ./data:/data
-    restart: unless-stopped
+    restart: on-failure
