@@ -1,0 +1,15 @@
+services:
+  minecraft-server:
+    image: itzg/minecraft-server
+    container_name: mc-server
+    ports:
+      - "8888:25565"
+    environment:
+      EULA: "${EULA}"
+      VERSION: "${VERSION}"
+      MOTD: "${MOTD}"
+      LEVEL: "${LEVEL}"
+      ONLINE_MODE: "${ONLINE_MODE}"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped

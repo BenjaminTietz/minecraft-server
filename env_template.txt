@@ -1,0 +1,2 @@
+EULA=TRUE
+MOTD=Welcome to my Docker Minecraft Server
